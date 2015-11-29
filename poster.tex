@@ -7,6 +7,7 @@
 \usepackage{wrapfig}
 \usepackage{url}
 \usepackage{tikz}
+\usetikzlibrary{calc}
 \usepackage{color}
 \usepackage{epstopdf}
 \usepackage{algorithm}
@@ -42,7 +43,7 @@
 \setbeamerfont{footline}{size=\large}
 \setbeamercolor{separation line}{bg=black}
 \setbeamercolor{title in headline}{fg=utor2}
-\setbeamercolor{author in headline}{fg=black}
+\setbeamercolor{author in headline}{fg=gray}
 \setbeamercolor{institute in headline}{fg=gray}
 \setbeamercolor{framesubtitle}{fg=blue, bg=gray}
 \setbeamercolor{author in head/foot}{fg=black,bg=black}
@@ -53,7 +54,14 @@
 \pgfdeclareverticalshading{beamer@headfade}{\paperwidth}{%
 color(0cm)=(bg); color(1.5cm)=(section in head/foot.bg) }
 \setbeamercolor{section in head/foot}{bg=} 
+\graphicspath{{./figures/}} %142.24, 96.52
+
 \begin{beamercolorbox}[wd=\paperwidth]{headline}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=center,inner sep=0pt] at ($(current page.north
+  east)+(-8.5cm,-3.5cm)$) {\includegraphics[width=12cm]{figures/utoronto.pdf}};
+\end{tikzpicture}
 
 \begin{columns}[T]
 
@@ -64,22 +72,22 @@ color(0cm)=(bg); color(1.5cm)=(section in head/foot.bg) }
 {\color{fg}\textbf{\LARGE{\inserttitle}}\\[4ex]}
 
 \usebeamercolor{author in headline}
-{\color{fg}\large{\insertauthor}\hspace{15mm}}
+{\color{fg}\textbf{\large{\insertauthor}}\hspace{15mm}}
 \usebeamercolor{institute in headline}
-{\color{fg}\large{\insertinstitute}\\[1ex]}
+{\color{fg}\textbf{\large{\insertinstitute}}\\[1ex]}
 \vskip 4ex
 \end{column}
 
 \end{columns}
 \end{beamercolorbox}
 }
-\setbeamertemplate{items}[ball]   % 3-D balls for itemize/enumerate
+\setbeamertemplate{items}[circle]   % 3-D balls for itemize/enumerate
 \mode<all>
 }
 
-\graphicspath{{./figures/}} %142.24, 96.52
 \usepackage[orientation=landscape,
 size=custom,width=111.76,height=96.52,scale=1.4,debug]{beamerposter} %0.6
+\graphicspath{{./figures/}} %142.24, 96.52
 
 %-- Header and footer information ----------------------------------
 \title{\huge{Exploring Models and Data for Image Question Answering}}
@@ -201,6 +209,7 @@ riding ] [.NP [.DET a ] [.N horse ] ] ] ] ]}
 \end{figure}
 
 \item We pruned answers that appear too rarely or too often.
+\item Used MS-COCO to generate our COCO-QA dataset.
 \end{itemize}
 
 \end{block}
@@ -216,8 +225,7 @@ regression on the bag-of-words vector to classify answers.
 
 \item \*{LSTM} Input the question words into the LSTM alone.
 
-\item \*{IMG} Re-train a separate CNN classification layer for each type of
-question.
+\item \*{IMG} Re-train a separate CNN last layer for each question type.
 
 \item \*{IMG+PRIOR} Combine the prior knowledge of an object and the image
 understanding from the ``deaf model''. $c$: color, $o$: object of interest, and
@@ -248,6 +256,7 @@ $\hat{p}(o | c) = \frac{count(o, c)}{count(c)}$ and Laplace smoothing.
 \input{imgword.tex}}
 \label{fig:imgword}
 \end{figure}
+\vskip 0.5in
 
 \item \*{2-VIS+BLSTM} Two image feature inputs, at the start and the end of the
 question, with different linear transformations. LSTMs going in forward and
@@ -261,9 +270,10 @@ backward directions.
 \vfill
 
 %-- Block 2-2--------------------------------------------------
-\begin{block}{\bf{\large Experimental Results}} 
+\begin{block}{\bf{\large Experimental Results}}
+
 \begin{table}[t!]
-\caption{COCO-QA question type break-down}
+\caption{COCO-QA question types}
 \small
 \label{tab:dataset_category_stats}
 \begin{center}
@@ -283,10 +293,12 @@ Total    & 78736 & 100.00\% & 38948 & 100.00\% \\
 
 \end{center}
 \end{table}
+\vskip 0.4in
 \vfill
 
 \begin{table}[t!]
-\caption{DAQUAR and COCO-QA results}
+\caption{DAQUAR and COCO-QA results \footnote{After the release of our paper,
+Ma et al. \cite{ma15} claimed to achieve better results on both datasets.}}
 \small
 \label{tab:daquar_results}
 \begin{center}
@@ -294,7 +306,7 @@ Total    & 78736 & 100.00\% & 38948 & 100.00\% \\
 \begin{tabular}{c | c c c | c c c}
 \hline
             &          &  DAQUAR  &          &          &  COCO-QA &          \\
-            & Acc.     & WUPS 0.9 & WUPS 0.0 & Acc.     & WUPS 0.9 & WUPS 0.0 \\
+            &  Acc.    & WUPS 0.9 & WUPS 0.0 &  Acc.    & WUPS 0.9 & WUPS 0.0 \\
 \hline         
 MULTI-WORLD 
 \cite{mal1} &  0.1273  &  0.1810  &  0.5147  &  -       &  -       &  -       \\
@@ -303,7 +315,7 @@ BOW         &  0.3267  &  0.4319  &  0.8130  &  0.3752  &  0.4854  &  0.8278  \\
 LSTM        &  0.3273  &  0.4350  &  0.8162  &  0.3676  &  0.4758  &  0.8234  \\
 IMG         &  -       &  -       &  -       &  0.4302  &  0.5864  &  0.8585  \\
 IMG+PRIOR   &  -       &  -       &  -       &  0.4466  &  0.6020  &  0.8624  \\
-K-NN(K=31,13)&  0.3185 &  0.4242  &  0.8063  &  0.4496  &  0.5698  &  0.8557  \\
+K-NN(K=31,13)& 0.3185  &  0.4242  &  0.8063  &  0.4496  &  0.5698  &  0.8557  \\
 IMG+BOW     &  0.3417  &  0.4499  &  0.8148  &\*{0.5592}&\*{0.6678}&\*{0.8899}\\
 VIS+LSTM    &  0.3441  &  0.4605  &\*{0.8223}&  0.5331  &  0.6391  & 0.8825   \\
 ASK-NEURON 
@@ -317,6 +329,7 @@ HUMAN       &  0.6027  &  0.6104  &  0.7896  &  -       &  -       &  -       \\
 
 \end{center}
 \end{table}
+\vskip 0.4in
 \vfill
 
 \begin{table}[t!]
