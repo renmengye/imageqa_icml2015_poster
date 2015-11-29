@@ -21,80 +21,76 @@
 \usepackage{graphicx}
 
 \renewcommand{\algorithmiccomment}[1]{\hfill\eqparbox{COMMENT}{#1}}
+\renewcommand{\*}[1]{\textbf{#1}}
 \setbeamertemplate{bibliography item}[text]
 \setbeamertemplate{bibliography entry title}{}
 \setbeamertemplate{bibliography entry location}{}
 \setbeamertemplate{bibliography entry note}{}
 \mode<presentation>{
-\definecolor{uagreen}{RGB}{0,124,65}
-\definecolor{utor}{RGB}{12,28,71}
-\definecolor{utor2}{RGB}{0,32,78}
-\setbeamercolor{structure}{fg=utor2}
-\setbeamercolor{headline}{bg=white}
-\setbeamercolor{footline}{bg=black}
-\setbeamerfont{footline}{size=\large}
-\setbeamercolor{separation line}{bg=black}
-\setbeamercolor{title in headline}{fg=utor2}
-\setbeamercolor{author in headline}{fg=black}
-\setbeamercolor{institute in headline}{fg=lightgray}
-\setbeamercolor{framesubtitle}{fg=blue, bg=gray}
-\setbeamercolor{author in head/foot}{fg=black,bg=black}
-%\setbeamercolor{title in head/foot}{fg=butter,bg=black}
-%\setbeamercolor{website in footline}{fg=butter,bg=black}
-%\setbeamercolor{email in footline}{fg=butter,bg=black}
-\setbeamercolor{section in head/foot}{use=structure,bg=structure.fg!25!bg}
-\setbeamertemplate{headline}{%
-\leavevmode
-{\usebeamercolor{section in head/foot}}
-\pgfdeclareverticalshading{beamer@headfade}{\paperwidth}{%
-color(0cm)=(bg); color(1.5cm)=(section in head/foot.bg) }
-\setbeamercolor{section in head/foot}{bg=} 
-\begin{beamercolorbox}[wd=\paperwidth]{headline}
-  \begin{columns}[T]
-    \begin{column}{.04\paperwidth} %0.02
-    \end{column}
-    \begin{column}{0.05\paperwidth} %0.07
-      \centering
-      \vskip4ex
-      \vspace{1pt}
-    \end{column}
-    \begin{column}{.675\paperwidth} %0.675
-      \vskip4ex
-      \usebeamercolor{title in headline}
-      {\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
-      \usebeamercolor{author in headline}
-      {\color{fg}\Large{\insertauthor} \hspace{15mm}}
-      \usebeamercolor{institute in headline}
-      {\color{fg}\large{\insertinstitute}\\[1ex]}
-      \vskip2ex
+  \definecolor{uagreen}{RGB}{0,124,65}
+  \definecolor{utor}{RGB}{12,28,71}
+  \definecolor{utor2}{RGB}{0,32,78}
+  \setbeamercolor{structure}{fg=utor2}
+  \setbeamercolor{headline}{bg=white}
+  \setbeamercolor{footline}{bg=black}
+  \setbeamerfont{footline}{size=\large}
+  \setbeamercolor{separation line}{bg=black}
+  \setbeamercolor{title in headline}{fg=utor2}
+  \setbeamercolor{author in headline}{fg=black}
+  \setbeamercolor{institute in headline}{fg=lightgray}
+  \setbeamercolor{framesubtitle}{fg=blue, bg=gray}
+  \setbeamercolor{author in head/foot}{fg=black,bg=black}
+  \setbeamercolor{section in head/foot}{use=structure,bg=structure.fg!25!bg}
+  \setbeamertemplate{headline}{
+  \leavevmode
+  {\usebeamercolor{section in head/foot}}
+  \pgfdeclareverticalshading{beamer@headfade}{\paperwidth}{%
+  color(0cm)=(bg); color(1.5cm)=(section in head/foot.bg) }
+  \setbeamercolor{section in head/foot}{bg=} 
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+      \begin{column}{.04\paperwidth} %0.02
       \end{column}
-      \begin{column}{.25\paperwidth}
+      \begin{column}{0.05\paperwidth} %0.07
         \centering
-        \vskip4ex
-        \hspace{-2in}
-        \includegraphics[height=0.04\paperwidth]{logo.jpg} %0.025
+        \vskip 4ex
         \vspace{1pt}
       \end{column}
-      \begin{column}{.03\paperwidth}
-      \end{column}
-    \end{columns}
-  \end{beamercolorbox}
+      \begin{column}{.675\paperwidth} %0.675
+        \vskip 4ex
+        \usebeamercolor{title in headline}
+        {\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
+        \usebeamercolor{author in headline}
+        {\color{fg}\Large{\insertauthor} \hspace{15mm}}
+        \usebeamercolor{institute in headline}
+        {\color{fg}\large{\insertinstitute}\\[1ex]}
+        \vskip 2ex
+        \end{column}
+        \begin{column}{.25\paperwidth}
+          \centering
+          \vskip 4ex
+          \hspace{-2in}
+          \includegraphics[height=0.04\paperwidth]{logo.jpg} %0.025
+          \vspace{1pt}
+        \end{column}
+        \begin{column}{.03\paperwidth}
+        \end{column}
+      \end{columns}
+    \end{beamercolorbox}
 
-  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
-    \rule{0pt}{2pt}
-  \end{beamercolorbox} 
-}
-
-%\addtoheadtemplate{\pgfuseshading{beamer@headfade}\vskip-1.5cm}{}
-\setbeamertemplate{items}[ball]   % 3-D balls for itemize/enumerate
-%\useoutertheme{umbcfootline}
-\mode<all>
+    \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+      \rule{0pt}{2pt}
+    \end{beamercolorbox}
+    \vskip 4ex
+  }
+  %\addtoheadtemplate{\pgfuseshading{beamer@headfade}\vskip-1.5cm}{}
+  \setbeamertemplate{items}[ball]   % 3-D balls for itemize/enumerate
+  \mode<all>
 }
 
 \graphicspath{{./figures/}} %142.24, 96.52
 \usepackage[orientation=landscape,
 size=custom,width=111.76,height=96.52,scale=1.4,debug]{beamerposter} %0.6
-%\usepackage[orientation=landscape,scale=1.25,debug]{beamerposter}
 
 %-- Header and footer information ----------------------------------
 %\newcommand{\footleft}{http://www.shawnlankton.com/category/latex/}
@@ -115,259 +111,450 @@ size=custom,width=111.76,height=96.52,scale=1.4,debug]{beamerposter} %0.6
 \vfill
 
 %-- Block 1-1 --------------------------------------------------
-\begin{block}{\bf{\large The problems to solve}}
+\begin{block}{\bf{\large Problem}}
 	\begin{itemize}
-	  \item Retrieve and generate descriptions of images
+	  \item Image Question Answering (QA): given an image and a free-form 
+    question, find an answer.
+    \item We assume that answers are one-word, thus we can treat it as a 
+    classification problem.
 	\end{itemize}
-  \begin{figure}[t!]
-    \vspace{-0.1in}
+    \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.85\columnwidth]{caption_results.pdf}
-    \vspace{-0.1in}
-    \caption{Sample generated captions from our proposed model.
-    The bottom row shows some representative error cases, along with our
-    description (in red) of the type of error. None of these generated
-    descriptions appear word for word in the training set.} 
-    \label{fig:annot}
-  \end{figure}
+    \scriptsize
+    $\begin{array}{p{8.3cm} p{8.3cm} p{8.3cm} p{8.3cm}}
+    \scalebox{0.23}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{1553.jpg}}
+    \parbox{8cm}{
+        \vskip 0.05in
+        DAQUAR 1553\\
+        \textbf{What is there in front of the sofa?}\\
+        Ground truth: table\\
+        IMG+BOW: \textcolor{green}{table (0.74)}\\
+        2-VIS+BLSTM: \textcolor{green}{table (0.88) }\\
+        LSTM: \textcolor{red}{chair (0.47) }
+    }
+    &
+    \scalebox{0.23}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{5078.jpg}}
+    \parbox{8cm}{
+        \vskip 0.05in
+        COCOQA 5078\\
+        \textbf{How many leftover donuts is the red bicycle holding?}\\
+        Ground truth: three\\
+        IMG+BOW: \textcolor{red}{two (0.51)}\\
+        2-VIS+BLSTM: \textcolor{green}{three (0.27)}\\
+        BOW: \textcolor{red}{one (0.29)}
+    }
+    &
+    \scalebox{0.23}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{1238.jpg}}
+    \parbox{8cm}{
+        \vskip 0.05in
+        COCOQA 1238\\
+        \textbf{What is the color of the tee-shirt?}\\
+        Ground truth: blue\\
+        IMG+BOW: \textcolor{green}{blue (0.31) }\\
+        2-VIS+BLSTM: \textcolor{red}{orange (0.43) }\\
+        BOW: \textcolor{red}{green (0.38) }
+    }
+    &
+    \scalebox{0.23}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{135.jpg}}
+    \parbox{8cm}{
+        \vskip 0.05in
+        COCOQA 26088\\
+        \textbf{Where is the gray cat sitting?}\\
+        Ground truth: window\\
+        IMG+BOW: \textcolor{green}{window (0.78) }\\
+        2-VIS+BLSTM: \textcolor{green}{window (0.68) }\\
+        BOW: \textcolor{red}{suitcase (0.31) }
+    }
+    \end{array}$
+    \caption{Sample questions and responses of a variety of models. 
+    Correct answers are in green and incorrect in red. The numbers in 
+    parentheses are the probabilities assigned to the top-ranked answer by the 
+    given model. The leftmost example is from the DAQUAR dataset, and the 
+    others are from our new COCO-QA datset.}
+    \label{fig:number_questions}
+    \end{figure}
 \end{block}
 \vfill
 
 %-- Block 1-2 --------------------------------------------------
-\begin{block}{\bf{\large Our encoder-decoder model}}
+\begin{block}{\bf{\large Our Models}}
   \begin{itemize}
-  \item Encoder-decoder model
-  \end{itemize}
+  \item \*{VIS+LSTM Model}
   \begin{figure}[t!]
-    \centering
-    \includegraphics[width=0.9\columnwidth]{encdec2}
-    \caption{\textbf{Encoder:} A deep convolutional network (CNN) and long
-      short-term memory recurrent network (LSTM) for learning a joint
-      image-sentence embedding. \textbf{Decoder:} A new neural language model that
-      combines structure and content vectors for generating words one at a time in
-      sequence.} 
-    \label{fig:annot2}
+  \centering
+  \small
+  \scalebox{1.0}{
+  \input{imgword.tex}}
+  \caption{VIS+LSTM Model}
+  \label{fig:imgword}
   \end{figure}
+  \begin{itemize}
+  \item Borrowed the idea of treating the image as a word from previous caption 
+  generation work done by Vinyals et al. \cite{vinyals14}. 
+  \item Image features are passed through a linear transformation to match with 
+  word vector dimensions.
+  \item At the last time step, the Long Short Term Memory (LSTM) 
+  \cite{hochreiter97} outputs to the softmax layer to classify answers.
+  \end{itemize}
+  \item \*{2-VIS+BLSTM Model}
+  \begin{itemize}
+  \item Two image feature inputs, at the start and the end of the question, with different learned linear transformations.
+  \item LSTMs going in both the forward and backward directions. 
+  \item Both LSTMs output to the softmax layer.
+  \end{itemize}
+  \item \*{IMG+BOW} Multinomial logistic regression based on the CNN image features (4096 dimension), and learned bag-of-word (BOW) vectors.
+  \item \*{FULL} A simple average of the three models above.
+  \end{itemize}
 \end{block}
 \vfill
 
 %-- Block 1-3 --------------------------------------------------
-\begin{block}{\bf{\large Encoder (ConvNet-LSTM)}}  
+\begin{block}{\bf{\large Automatic QA Generation}}  
   \begin{itemize}
-    \item Given: (image, sentence) training pairs           
-    \begin{figure}[t!]
-      \vspace{-0.1in}
-      \centering
-      \includegraphics[width=0.9\columnwidth]{lstm}
-      \vspace{-0.1in}
-      \caption{LSTM. Inputs are word vectors, hidden states gives sentence vectors.} 
-      \label{fig:annot}
-    \end{figure}
-    \item ${\bf x}$: linear transformation of ConvNet 4096 dim output, unit norm
-    \item ${\bf v}$: Sentence embedding (hidden state of the LSTM), unit norm
-    \item Minimize the following pairwise ranking loss:
-    \begin{eqnarray}
-    \small
-    \underset{\boldsymbol\theta}{\operatorname{min}} \hspace{1mm}
-    \label{eq:rank}
-    \sum_{\bf x} \sum_k \text{max}\{0, \alpha - s({\bf x}, {\bf v}) + s({\bf x}, {\bf v}_k)\} 
-    + \sum_{\bf v} \sum_k \text{max}\{0, \alpha - s({\bf v}, {\bf x}) + s({\bf v}, {\bf x}_k)\}, 
-    \nonumber 
-    \end{eqnarray}
-    \item Where ${\bf v}_k, {\bf x}_k$ are contrastive terms
+    \item {\bf{Motivation}} Currently available dataset DAQUAR \cite{mal14a} is 
+    very small (1500 images, 7000 QA on 37 classes of objects, 12000 QA on 894 
+    classes of objects). Guessing the modes can yield very good accuracy, and 
+    ``blind models'' can achieve almost equal performance compared the best 
+    model.
   \end{itemize}
 \end{block}
-\vfill
+
 \endminipage
 \end{column}
 
 %-- Column 2 ---------------------------------------------------
 \begin{column}{0.32\linewidth}
-
 \minipage[c][0.9\textheight][s]{\columnwidth}
 
 %-- Block 2-1 --------------------------------------------------
+\begin{block}{}
+\begin{itemize}
+    \item We generate 4 types of questions: object, number, color, location, 
+    directly from image description.
+    \item All answers are one-word.
+    \item We move the wh-word and verb to the front under certain constraints. 
+    For example, ``A man is riding a \*{horse}'' $=>$ ``\*{What} is \*{the} man 
+    riding?''
+    \item We pruned answers that appear too rarely or too often.
+\end{itemize}
+\end{block}
 \vfill
-\begin{block}{\bf{\large Decoder (SC-NLM)}}  
-  \begin{itemize}
-  \item Let ${\bf v}$ denote the image embedding from the multimodal space
-  \item Given a sentence $w_1, \ldots, w_N$, 
-    with corresponding POS tags $t_1, \ldots, t_N$
-  \item Model the distribution $P(w_n = i | w_{1:n-1}, t_{n:n+k}, 
-  {\bf v})$ for previous word context $w_{1:n-1}$ 
-  and forward POS context $t_{n:n+k}$
-  \end{itemize}
-  \begin{figure}
-    \centering
-    \mbox{
-      \subfigure[Multiplicative NLM]
-      {\includegraphics[width=0.29\columnwidth]{l2.pdf}}%\quad
-      \hspace{5mm}
-      \subfigure[Structure-content NLM]
-      {\includegraphics[width=0.316\columnwidth]{l3a.pdf}}\quad
-      \hspace{2mm}
-      \subfigure[SC-NLM prediction]
-      {\includegraphics[width=0.33\columnwidth]{stnlm.pdf}}%\quad
-    }
 
-    \caption{{\bf Left:} Multiplicative neural language model. {\bf Middle:}
-      Structure-content neural language model (SC-NLM). {\bf Right:} The
-      prediction problem of an SC-NLM: estimate 
-      $P(w_n = i | w_{1:n-1}, t_{n:n+k}, {\bf v})$, where ``A bicycle'' is the context 
-      $w_{1:n-1}$, ``VBN IN DT NN'' is the forward structure context
-      $t_{n:n+k}$, and the content ${\bf v}$ is the image embedding.}
-    \label{fig:nlms}
-  \end{figure}
+\begin{block}{\bf{\large Baselines}}
+  \begin{itemize}
+  \item \*{GUESS} Predict the mode based on the question type.
+  \item \*{BOW} Given only the questions without the images and perform logistic regression on the bag-of-words vector to classify answers.
+  \item \*{LSTM} Input the question words into the LSTM alone.
+  \item \*{IMG} Re-train a separate CNN classification layer for each type of question.
+  \item \*{IMG+PRIOR} Combine the prior knowledge of an object and the image understanding from the "deaf model". Denote $c$ as the color, $o$ as the class of the   object of interest, and $x$ as the image. Assuming $o$ and $x$ are conditionally independent given the color. Use the output of the IMG model as $p(c | x)$. $p(c | o, x) = \frac{p(o | c) p(c | x)}{\sum_{c \in \mathcal{C}}  p(o | c) p(c | x)}$. Empirical estimate: $\hat{p}(o | c) = \frac{count(o, c)}{count(c)}$ and Laplace smoothing.
+  \end{itemize}
 \end{block}
 \vfill
 
 %-- Block 2-2--------------------------------------------------
-\begin{block}{\bf{\large How to generate descriptions}} 
-  \begin{itemize}
-  \item Given an image, map it into the multimodal space to get ${\bf v}$
-  \item Sample a POS sequence from the training set
-  \item Generate a description ${\bf x}$ from the SC-NLM
-  \item Score the description with a \textbf{translation model} $(s({\bf x}, {\bf v}))$ and an n-gram \textbf{language model}.
-  \end{itemize}
+\begin{block}{\bf{\large Experimental Results}} 
+\begin{table}[t!]
+\caption{COCO-QA question type break-down}
+\small
+\label{tab:dataset_category_stats}
+\begin{center}
+\begin{tabular}{c c c c c}
+\hline
+Category & Train & \%       & Test  & \%       \\
+\hline
+Object   & 54992 & 69.84\%  & 27206 & 69.85\%  \\
+Number   & 5885  & 7.47\%   & 2755  & 7.07\%   \\
+Color    & 13059 & 16.59\%  & 6509  & 16.71\%  \\
+Location & 4800  & 6.10\%   & 2478  & 6.36\%   \\
+\hline
+Total    & 78736 & 100.00\% & 38948 & 100.00\% \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\vfill
+
+\begin{table}[t!]
+\caption{DAQUAR and COCO-QA results}
+\small
+\label{tab:daquar_results}
+\begin{center}
+\begin{tabular}{c | c c c | c c c}
+\hline
+             &          &  DAQUAR  &          &          &  COCO-QA &          \\
+             & Acc.     & WUPS 0.9 & WUPS 0.0 & Acc.     & WUPS 0.9 & WUPS 0.0 \\
+\hline         
+MULTI-WORLD \cite{mal14b}&  0.1273  &  0.1810  &  0.5147  &  -       &  -       &  -       \\
+GUESS        &  0.1824  &  0.2965  &  0.7759  &  0.0665  &  0.1742  &  0.7344  \\
+BOW          &  0.3267  &  0.4319  &  0.8130  &  0.3752  &  0.4854  &  0.8278  \\
+LSTM         &  0.3273  &  0.4350  &  0.8162  &  0.3676  &  0.4758  &  0.8234  \\
+IMG          &  -       &  -       &  -       &  0.4302  &  0.5864  &  0.8585  \\
+IMG+PRIOR    &  -       &  -       &  -       &  0.4466  &  0.6020  &  0.8624  \\
+IMG+BOW      &  0.3417  &  0.4499  &  0.8148  &\*{0.5592}&\*{0.6678}&\*{0.8899}\\
+VIS+LSTM     &  0.3441  &  0.4605  &\*{0.8223}&  0.5331  &  0.6391  & 0.8825   \\
+ASK-NEURON \cite{mal15}&  0.3468  &  0.4076  & 0.7954   &  -       &  -       &  -       \\
+2-VIS+BLSTM  &\*{0.3578}&\*{0.4683}& 0.8215   &  0.5509  &  0.6534  & 0.8864   \\
+FULL         &\*{0.3694}&\*{0.4815}&\*{0.8268}&\*{0.5784}&\*{0.6790}&\*{0.8952}\\
+\hline
+HUMAN        &  0.6027  &  0.6104  &  0.7896  &  -       &  -       &  -       \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\vfill
+
+\begin{table}[t!]
+\caption{COCO-QA accuracy per category}
+\small
+\label{tab:cocoqa_acc_breakdown}
+\begin{center}
+\begin{tabular}{c c c c c}
+\hline
+           &   Object  &   Number &   Color   & Location \\
+\hline
+GUESS      &   0.0211  &   0.3584 &   0.1387  & 0.0893   \\
+BOW        &   0.3727  &   0.4356 &   0.3475  & 0.4084   \\
+LSTM       &   0.3587  &   0.4534 &   0.3626  & 0.3842   \\
+IMG        &   0.4073  &   0.2926 &   0.4268  & 0.4419   \\
+IMG+PRIOR  &   -       &   0.3739 &   0.4899  & 0.4451   \\
+IMG+BOW    &\*{0.5866} &   0.4410 &\*{0.5196} &\*{0.4939}\\
+VIS+LSTM   &   0.5653  &\*{0.4610}&   0.4587  & 0.4552   \\
+2-VIS+BLSTM&   0.5817  &   0.4479 &   0.4953  & 0.4734   \\
+FULL       &\*{0.6108} &\*{0.4766}&   0.5148  &\*{0.5028}\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
 \end{block}
 \vfill
 
-%-- Block 2-3 --------------------------------------------------
-\begin{block}{\bf{\large Experiment: Localization}}  
-  \begin{itemize}
-  \item How well can we localize objects after training?
-  \end{itemize}
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.9\columnwidth]{align} 
-    \caption{Self-taught object localization. Even though our model does not
-      incorporate object detections during training, it can still learn to
-      localize.}
-    \label{fig:local}
-  \end{figure}
-\end{block}
-\vfill   
-
-%-- Block 2-4 --------------------------------------------------
-\begin{block}{\bf{\large Experiment: Multimodal linguistic regularities}}  
-  \begin{itemize}
-  \item Multimodal vector space arithmetic with a linear encoder
-  \end{itemize}
-  \begin{figure}
-    \centering
-    \mbox{
-      \subfigure[Colors]
-      {\includegraphics[width=0.33\columnwidth]{colors_crop2.pdf}}
-      \hspace{0.1in}
-      \subfigure[Image structure]
-      {\includegraphics[width=0.33\columnwidth]{others_crop2.pdf}}
-      \subfigure[Sanity check]
-      {\includegraphics[width=0.285\columnwidth]{sanity_crop2.pdf}}
-    }
-    \caption{Multimodal vector space arithmetic, for (a) Colors and (b) Image
-      structure. The sanity check shows that the retrieved images are not 
-      simply the ones associated with the added word.} 
-    \label{fig:lr}
-  \end{figure}
-\end{block}
-\vfill
 \endminipage
-\end{column}%2
+\end{column}
 
 %-- Column 3 ---------------------------------------------------
 \begin{column}{0.32\linewidth}
 \minipage[c][0.9\textheight][s]{\columnwidth}
 \vfill
 
-%-- Block 3-4 --------------------------------------------------
-\begin{block}{\bf{\large Image-sentence ranking}}
-  \begin{itemize}
-    \item Image-sentence ranking experiments: Flickr8K and Flickr30K
-    \item Image annotation: for each image, rank all descriptions
-    \item Image search: for each sentence, rank all images
-    \item Retrieval is done within the development/test sets (1000 images)
-  \end{itemize}      
-  \begin{table}[t]
-  \small
-  \centering
-  \begin{tabulary}{\linewidth}{L|CCCC|CCCC}
-    \hline
-    \multicolumn{9}{c}{\textbf{Flickr8K}} \\
-    \hline
-    & \multicolumn{4}{c}{Image Annotation} & \multicolumn{4}{c}{Image Search} \\
-    \textbf{Model} & \textbf{R@1} & \textbf{R@5} & \textbf{R@10} & \textbf{Med} \it{r} & \textbf{R@1} & \textbf{R@5} & \textbf{R@10} & \textbf{Med} \it{r} \\
-    \hline
-    \hline
-    Random Ranking & 0.1 & 0.6 & 1.1 & 631 & 0.1 & 0.5 & 1.0 & 500 \\
-    \hline
-    SDT-RNN \cite{socher2013grounded} & 4.5 & 18.0 & 28.6 & 32 & 6.1 & 18.5 & 29.0 & 29 \\
-    $\dagger$ DeViSE \cite{fromedevise2013} & 4.8 & 16.5 & 27.3 & 28 & 5.9 & 20.1 & 29.6 & 29 \\
-    $\dagger$ SDT-RNN \cite{socher2013grounded} & 6.0 & 22.7 & 34.0 & 23 & 6.6 & 21.6 & 31.7 & 25 \\
-    DeFrag \cite{karpathy2014deep} & 5.9 & 19.2 & 27.3 & 34 & 5.2 & 17.6 & 26.5 & 32 \\
-    $\dagger$ DeFrag \cite{karpathy2014deep} & 12.6 & 32.9 & 44.0 & 14 & 9.7 & 29.6 & 42.5 & 15 \\
-    m-RNN \cite{mao2014explain} & \textit{14.5} & \textit{37.2} & \textit{48.5} & \textit{11} & 11.5 & \textit{31.0} & 42.4 & 15 \\
-    $\dagger$ BRNN \cite{karpathy2014deepvs} & \underline{16.5} & \underline{40.6} & \underline{54.2} & \underline{7.6} & \underline{11.8} & \underline{32.1} & \underline{44.7} & \underline{12.4} \\
-    $\ddagger$ NIC (GoogLeNet) \cite{vinyals2014show} & (\textbf{20}) &  & (\textbf{61}) & \textbf{6} & (\textbf{19}) & & (\textbf{64}) & \textbf{5} \\
-    \hline
-    Our model & 13.5 & 36.2 & 45.7 & 13 & 10.4 & \textit{31.0} & \textit{43.7} & \textit{14} \\
-    Our model (OxfordNet) & 18.0 & 40.9 & 55.0 & 8 & 12.5 & 37.0 & 51.5 & 10 \\
-    \hline
-  \end{tabulary}
-  \vspace{-0.05in}
-  \label{fig:f8}
-  \end{table}    
-  \begin{table}[t]
-  \small
-  \centering
-  \begin{tabulary}{\linewidth}{L|CCCC|CCCC}
-    \hline
-    \multicolumn{9}{c}{\textbf{Flickr30K}} \\
-    \hline
-    & \multicolumn{4}{c}{Image Annotation} & \multicolumn{4}{c}{Image Search} \\
-    \textbf{Model} & \textbf{R@1} & \textbf{R@5} & \textbf{R@10} & \textbf{Med} \it{r} & \textbf{R@1} & \textbf{R@5} & \textbf{R@10} & \textbf{Med} \it{r} \\
-    \hline
-    \hline
-    Random Ranking & 0.1 & 0.6 & 1.1 & 631 & 0.1 & 0.5 & 1.0 & 500 \\
-    \hline
-    $\dagger$ DeViSE \cite{fromedevise2013} & 4.5 & 18.1 & 29.2 & 26 & 6.7 & 21.9 & 32.7 & 25 \\
-    $\dagger$ SDT-RNN \cite{socher2013grounded} & 9.6 & 29.8 & 41.1 & 16 & 8.9 & 29.8 & 41.1 & 16 \\
-    $\dagger$ DeFrag \cite{karpathy2014deep} & 14.2 & 37.7 & 51.3 & 10 & 10.2 & 30.8 & 44.2 & 14 \\
-    $\dagger$ DeFrag + Finetune CNN & 16.4 & 40.2 & 54.7 & 8 & 10.3 & 31.4 & 44.5 & 13 \\
-    m-RNN \cite{mao2014explain} & \textit{18.4} & \textit{40.2} & \textit{50.9} & \textit{10} & 12.6 & 31.2 & 41.5 & 16 \\
-    LRCN \cite{donahue2014long} &  &  &  &  & \textit{14.0} & \textit{34.9} & \textit{47.0} & \textit{11} \\
-    $\dagger$ BRNN \cite{karpathy2014deepvs} & \underline{22.2} & \underline{48.2} & \underline{61.4} & \textbf{4.8} & \underline{15.2} & \underline{37.7} & \underline{50.5} & \underline{9.2} \\
-    $\ddagger$ NIC (GoogLeNet) \cite{vinyals2014show} & (17) &  & (56) & 7 & (\textbf{17}) &  & (\textbf{57}) & \textbf{7} \\
-    \hline
-    Our model & 14.8 & 39.2 & \textit{50.9} & \textit{10} & 11.8 & 34.0 & 46.3 & 13 \\
-    Our model (OxfordNet) & \textbf{23.0} & \textbf{50.7} & \textbf{62.9} & \textbf{5} & \textbf{16.8} & \textbf{42.0} & \textbf{56.5} & 8 \\
-    \hline
-  \end{tabulary}
-  %\vspace{-0.1in}
-  \caption{{\small Flickr8K and Flickr30K experiments. \textbf{R@K} is Recall@K
-      (high is good). \textbf{Med} {\it r} is the median rank (low is
-      good). Best results overall are \textbf{bold}, best results without
-      OxfordNet or GoogLeNet features are \underline{underlined} and best
-      results that only use single frame features (without OxfordNet or
-      GoogLeNet) are \textit{italicized}. A $\dagger$ in front of the method
-      indicates that object detections were used along with single frame
-      features. A $\ddagger$ indicates that ensembles were used.}} 
-  \label{fig:f30}
-  \vspace{-0.1in}
-  \end{table}
-\end{block}    
+%-- Block 3-1 --------------------------------------------------
+\begin{block}{\bf{\large More Examples}}
+
+\begin{figure}
+\centering\tiny
+$\begin{array}{p{8.3cm} p{8.3cm} p{8.3cm} p{8.3cm}}
+    \scalebox{0.23}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{4018.jpg}}
+    \parbox{8cm}{
+        \vskip 0.05in
+        COCOQA 4018\\
+        \*{What is the color of the bowl?}\\
+        Ground truth: blue\\
+        IMG+BOW: \textcolor{green}{blue (0.49)}\\
+        2-VIS+LSTM: \textcolor{green}{blue (0.52)}\\
+        BOW: \textcolor{red}{white (0.45)}
+
+        \vskip 0.05in
+        COCOQA 4018a\\
+        \*{What is the color of the vest?}\\
+        Ground truth: red\\
+        IMG+BOW: \textcolor{green}{red (0.29)}\\
+        2-VIS+LSTM: \textcolor{red}{orange (0.37)}\\
+        BOW: \textcolor{red}{orange (0.57)}
+    }
+    &
+    \scalebox{0.23}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{1520.jpg}}
+    \parbox{8cm}{
+        \vskip 0.05in
+        DAQUAR 1522\\
+        \*{How many chairs are there?}\\
+        Ground truth: two\\
+        IMG+BOW: \textcolor{red}{four (0.24)}\\
+        2-VIS+BLSTM: \textcolor{red}{one (0.29)}\\
+        LSTM: \textcolor{red}{four (0.19)}
+
+        \vskip 0.05in
+        DAQUAR 1520\\
+        \*{How many shelves are there?}\\
+        Ground truth: three\\
+        IMG+BOW: \textcolor{green}{three (0.25)}\\
+        2-VIS+BLSTM: \textcolor{red}{two (0.48)}\\
+        LSTM: \textcolor{red}{two (0.21)}
+    }
+    &
+    \scalebox{0.23}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]
+        {25218.jpg}}
+    \parbox{8cm}{
+        \vskip 0.05in
+        COCOQA 14855\\
+        \*{Where are the ripe bananas sitting?}\\
+        Ground truth: basket\\
+        IMG+BOW: \textcolor{green}{basket (0.97)}\\
+        2-VIS+BLSTM: \textcolor{green}{basket (0.58)}\\
+        BOW: \textcolor{red}{bowl (0.48)}
+
+        \vskip 0.05in
+        COCOQA 14855a\\
+        \*{What are in the basket?}\\
+        Ground truth: bananas\\
+        IMG+BOW: \textcolor{green}{bananas (0.98) }\\
+        2-VIS+BLSTM: \textcolor{green}{bananas (0.68)}\\
+        BOW: \textcolor{green}{bananas (0.14)}
+    }
+    &
+    \scalebox{0.23}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{585.jpg}}
+    \parbox{8cm}{
+        \vskip 0.05in
+        DAQUAR 585\\
+        \*{What is the object on the chair?}\\
+        Ground truth: pillow\\
+        IMG+BOW: \textcolor{red}{clothes (0.37)}\\
+        2-VIS+BLSTM: \textcolor{green}{pillow (0.65) }\\
+        LSTM: \textcolor{red}{clothes (0.40)}
+        
+        \vskip 0.05in
+        DAQUAR 585a\\
+        \*{Where is the pillow found?}\\
+        Ground truth: chair\\
+        IMG+BOW: \textcolor{red}{bed (0.13)}\\
+        2-VIS+BLSTM: \textcolor{green}{chair (0.17) }\\
+        LSTM: \textcolor{red}{cabinet (0.79)}
+    }
+    \\
+    \noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}\noalign{\smallskip}
+    \scalebox{0.23}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]
+        {24952.jpg}}
+    \parbox{8cm}{
+        \vskip 0.05in
+        COCOQA 23419\\
+        \*{What is the black and white cat wearing?}\\
+        Ground truth: hat\\
+        IMG+BOW: \textcolor{green}{hat (0.50)}\\
+        2-VIS+BLSTM: \textcolor{red}{tie (0.34)}\\
+        BOW: \textcolor{red}{tie (0.60)}
+        \vskip 0.05in
+        COCOQA 23419a\\
+        \*{What is wearing a hat?}\\
+        Ground truth: cat\\
+        IMG+BOW: \textcolor{green}{cat (0.94)}\\
+        2-VIS+BLSTM: \textcolor{green}{cat (0.90)}\\
+        BOW: \textcolor{red}{dog (0.42)}
+    }
+    &
+    \scalebox{0.23}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{2136.jpg}}
+    \parbox{8cm}{
+        \vskip 0.05in
+        DAQUAR 2136\\
+        \*{What is right of table?}\\
+        Ground truth: shelves\\
+        IMG+BOW: \textcolor{green}{shelves (0.33)}\\
+        2-VIS+BLSTM: \textcolor{green}{shelves (0.28)}\\
+        LSTM: \textcolor{green}{shelves (0.20)}
+
+        \vskip 2mm
+        DAQUAR 2136a\\
+        \*{What is in front of table?}\\
+        Ground truth: chair\\
+        IMG+BOW: \textcolor{green}{chair (0.64)}\\
+        2-VIS+BLSTM: \textcolor{green}{chair (0.31)}\\
+        LSTM: \textcolor{green}{chair (0.37)}
+    }
+    &
+    \scalebox{0.23}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{22891.jpg}}
+    \parbox{8cm}{
+        \vskip 0.05in
+        COCOQA 22891\\
+        \*{What is the color of the coat?}\\
+        Ground truth: yellow\\
+        IMG+BOW: \textcolor{red}{black(0.45)}\\
+        VIS+LSTM: \textcolor{green}{yellow (0.24)}\\
+        BOW:  \textcolor{red}{red (0.28)}
+        \vskip 0.05in
+        COCOQA 22891a\\
+        \*{What is the color of the umbrella?}\\
+        Ground truth: red\\
+        IMG+BOW: \textcolor{red}{black (0.28)}\\
+        VIS+LSTM: \textcolor{red}{yellow (0.26)}\\
+        BOW:  \textcolor{green}{red (0.29) }
+    }
+    &
+    \scalebox{0.23}{
+        \includegraphics[width=\textwidth, height=.7\textwidth]{498.jpg}}
+    \parbox{8cm}{
+        \vskip 0.05in
+        COCOQA 498\\
+        \*{How many vintage refrigerators blue and red in color?}\\
+        Ground truth: four\\
+        IMG+BOW: \textcolor{red}{five (0.25)}\\
+        2-VIS+BLSTM: \textcolor{green}{four (0.29)}\\
+        BOW:  \textcolor{red}{one (0.24)}
+        \vskip 0.05in
+        COCOQA 498a\\
+        \*{How many refrigerators are blue?}\\
+        Ground truth: two\\
+        IMG+BOW: \textcolor{red}{four (0.35)}\\
+        2-VIS+BLSTM: \textcolor{red}{six (0.09)}\\
+        BOW:  \textcolor{green}{two (0.37) }
+    }
+\end{array}$
+\caption{Sample questions and responses of our system. For some of the examples, we specifically tested extra questions (the ones have 
+an ``a'' in the question ID).}
+\label{fig:selected_questions}
+\end{figure}
+
+\begin{itemize}
+% \item In DAQUAR, blind models can perform almost equally well. Larger 
+% performance differences in COCO-QA.
+% \item Simple bag-of-words can perform equally well compared to recurrent neural 
+% network.
+% \item Performance gain is largely from image features trained on object 
+% recognition.
+% \item Poor performance when asked about details of the image (non-salient 
+% object), and about numbers and colors of objects.
+% \item Sometimes the blind models can equally guess the most probable objects 
+% (e.g., chairs should be around the dining table).
+% \item Adding prior knowledge provides an immediate gain 
+% on the ``IMG'' model in terms of accuracy on Color and Number questions.
+\item Full results: http://www.cs.toronto.edu/\textasciitilde mren/imageqa/results
+\end{itemize}
+\end{block}
 \vfill
 
-%-- Block 3-5 --------------------------------------------------
-\begin{block}{\bf{\large Additional results}}
+%-- Block 3-2 --------------------------------------------------
+\begin{block}{\bf{\large Conclusion}}
   \begin{itemize}
-  \item \textbf{DEMO:} See deeplearning.cs.toronto.edu/i2t 
+  \item We present our end-to-end neural network models to image QA.
+  \item Simple bag-of-words can perform equally well compared to recurrent 
+  neural network.
+  \item Models have large space for improvement on questions such as color and counting.
+  \item We release an Image QA dataset that is automatically generated from image description. Download: http://www.cs.toronto.edu/\textasciitilde mren/imageqa/data/cocoqa
   \end{itemize}
 \end{block}
 \vfill
 
-%-- Block 3-6 --------------------------------------------------
+%-- Block 3-3 --------------------------------------------------
+\begin{block}{\bf{\large Current Directions}}
+  \begin{itemize}
+  \item Free-form text generation model. Similar to image captioning, it will require an automatic free-form answer evaluation metric.
+  \item Extend questions to open domain.
+  \item Use of visual attention to improve results and interpret output (based on recent successes of viusal attention in image captioning \cite{xu15}).
+  \end{itemize}
+\end{block}
+\vfill
+
+%-- Block 3-4 --------------------------------------------------
 \begin{block}{\bf{\large References}}
-  \footnotesize{\bibliography{tacl2014}}
+  \footnotesize{\bibliography{Reference}}
   \footnotesize{\bibliographystyle{unsrt}}
 \end{block}
 
