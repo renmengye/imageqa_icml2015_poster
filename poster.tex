@@ -72,7 +72,7 @@ color(0cm)=(bg); color(1.5cm)=(section in head/foot.bg) }
 {\color{fg}\textbf{\LARGE{\inserttitle}}\\[4ex]}
 
 \usebeamercolor{author in headline}
-{\color{fg}\textbf{\large{\insertauthor}}\hspace{15mm}}
+{\color{fg}\textbf{\large{\insertauthor}}\hspace{1.5in}}
 \usebeamercolor{institute in headline}
 {\color{fg}\textbf{\large{\insertinstitute}}\\[1ex]}
 \vskip 4ex
@@ -272,6 +272,9 @@ backward directions.
 %-- Block 2-2--------------------------------------------------
 \begin{block}{\bf{\large Experimental Results}}
 
+\begin{columns}
+
+\begin{column}{0.6\linewidth}
 \begin{table}[t!]
 \caption{COCO-QA question types}
 \small
@@ -293,6 +296,16 @@ Total    & 78736 & 100.00\% & 38948 & 100.00\% \\
 
 \end{center}
 \end{table}
+\end{column}
+
+\begin{column}{0.4\linewidth}
+\begin{figure}
+\includegraphics[width=\linewidth]{cocoqa_dist.pdf}
+\end{figure}
+\end{column}
+
+\end{columns}
+
 \vskip 0.4in
 \vfill
 
@@ -332,31 +345,35 @@ HUMAN       &  0.6027  &  0.6104  &  0.7896  &  -       &  -       &  -       \\
 \vskip 0.4in
 \vfill
 
-\begin{table}[t!]
-\caption{COCO-QA accuracy per category}
-\small
-\label{tab:cocoqa_acc_breakdown}
-\begin{center}
+\begin{figure}
+\includegraphics[width=\linewidth]{model_cat.pdf}
+\end{figure}
 
-\begin{tabular}{c c c c c}
-\hline
-           &   Object  &   Number &   Color   & Location \\
-\hline
-GUESS      &   0.0211  &   0.3584 &   0.1387  & 0.0893   \\
-BOW        &   0.3727  &   0.4356 &   0.3475  & 0.4084   \\
-LSTM       &   0.3587  &   0.4534 &   0.3626  & 0.3842   \\
-IMG        &   0.4073  &   0.2926 &   0.4268  & 0.4419   \\
-IMG+PRIOR  &   -       &   0.3739 &   0.4899  & 0.4451   \\
-K-NN       &   0.4799  &   0.3699 &   0.3723  & 0.4080   \\
-IMG+BOW    &\*{0.5866} &   0.4410 &\*{0.5196} &\*{0.4939}\\
-VIS+LSTM   &   0.5653  &\*{0.4610}&   0.4587  & 0.4552   \\
-2-VIS+BLSTM&   0.5817  &   0.4479 &   0.4953  & 0.4734   \\
-FULL       &\*{0.6108} &\*{0.4766}&   0.5148  &\*{0.5028}\\
-\hline
-\end{tabular}
+% \begin{table}[t!]
+% \caption{COCO-QA accuracy per category}
+% \small
+% \label{tab:cocoqa_acc_breakdown}
+% \begin{center}
 
-\end{center}
-\end{table}
+% \begin{tabular}{c c c c c}
+% \hline
+%            &   Object  &   Number &   Color   & Location \\
+% \hline
+% GUESS      &   0.0211  &   0.3584 &   0.1387  & 0.0893   \\
+% BOW        &   0.3727  &   0.4356 &   0.3475  & 0.4084   \\
+% LSTM       &   0.3587  &   0.4534 &   0.3626  & 0.3842   \\
+% IMG        &   0.4073  &   0.2926 &   0.4268  & 0.4419   \\
+% IMG+PRIOR  &   -       &   0.3739 &   0.4899  & 0.4451   \\
+% K-NN       &   0.4799  &   0.3699 &   0.3723  & 0.4080   \\
+% IMG+BOW    &\*{0.5866} &   0.4410 &\*{0.5196} &\*{0.4939}\\
+% VIS+LSTM   &   0.5653  &\*{0.4610}&   0.4587  & 0.4552   \\
+% 2-VIS+BLSTM&   0.5817  &   0.4479 &   0.4953  & 0.4734   \\
+% FULL       &\*{0.6108} &\*{0.4766}&   0.5148  &\*{0.5028}\\
+% \hline
+% \end{tabular}
+
+% \end{center}
+% \end{table}
 
 \end{block}
 \vfill
